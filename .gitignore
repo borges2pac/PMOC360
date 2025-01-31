@@ -1,0 +1,18 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/PMOC360/.vs
+/PMOC360/PMOC360.API/bin/Debug/net8.0
+/PMOC360/PMOC360.API/obj
+/PMOC360/PMOC360.Data/bin/Debug/net8.0
+/PMOC360/PMOC360.Data/obj
+/PMOC360/PMOC360.Domain/bin/Debug/net8.0
+/PMOC360/PMOC360.Domain/obj
+/PMOC360/PMOC360.Repository/bin/Debug/net8.0
+/PMOC360/PMOC360.Repository/obj
+/PMOC360/PMOC360.Service/bin/Debug/net8.0
+/PMOC360/PMOC360.Service/obj
+/PMOC360/PMOC360.Web/bin/Debug/net8.0
+/PMOC360/PMOC360.Web/obj
