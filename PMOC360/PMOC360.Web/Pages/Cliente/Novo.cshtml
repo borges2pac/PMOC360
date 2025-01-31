@@ -1,0 +1,79 @@
+﻿@page
+@model PMOC360.Web.Pages.Cliente.NovoModel
+@{
+	ViewData["Title"] = "Cadastrar Cliente";
+}
+<div class="row">
+	<div class="breadcrumb border-bottom border-info-subtle" style="font-size:small">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a asp-page="/Index">Home</a></li>
+			<li class="breadcrumb-item"><a asp-page="./Index">Cliente</a></li>
+			<li class="breadcrumb-item active" aria-current="page">Novo</li>
+		</ol>
+	</div>
+	<div class="container">
+		<h3>
+			Cadastrar Clientes
+		</h3>
+	</div>
+	@if (Model.Mensagem != null)
+	{
+		<p>@Model.Mensagem</p>
+	}
+	<div style="padding-top:20px;">
+		<form method="post" class="row g-3">
+			<div class="col-12" style="font-size:small">
+				<label asp-for="Cliente.Nome" class="form-label">Nome *</label>
+				<input asp-for="Cliente.Nome" type="text" class="form-control form-control-sm">
+			</div>
+			<div class="col-md-3" style="font-size:small">
+				<label asp-for="Cliente.Documento" class="form-label">Documento *</label>
+				<input asp-for="Cliente.Documento" type=" text" class="form-control form-control-sm" />
+			</div>
+			<div class="col-md-6" style="font-size:small">
+				<label asp-for="Cliente.Email" class="form-label">E-mail *</label>
+				<input asp-for="Cliente.Email" type=" email" class="form-control form-control-sm" />
+			</div>
+			<div class="col-md-3" style="font-size:small">
+				<label asp-for="Cliente.Telefone" class="form-label">Telefone *</label>
+				<input asp-for="Cliente.Telefone" type="tel" class="form-control form-control-sm" />
+			</div>
+			<div class="col-12" style="font-size:small">
+				<label asp-for="Cliente.Responsavel" class="form-label">Responsável Técnico *</label>
+				<input asp-for="Cliente.Responsavel" type="text" class="form-control form-control-sm" />
+			</div>
+			<div class="col-md-4" style="font-size:small">
+				<label asp-for="Cliente.Cep" class="form-label">CEP *</label>
+				<input asp-for="Cliente.Cep" type="text" class="form-control form-control-sm" id="txtCep" />
+			</div>
+			<div class="col-12" style="font-size:small">
+				<label asp-for="Cliente.Endereco" class="form-label">Endereço *</label>
+				<input asp-for="Cliente.Endereco" type="text" class="form-control form-control-sm" id="txtEndereco" />
+			</div>
+			<div class="col-md-2" style="font-size:small">
+				<label asp-for="Cliente.Numero" class="form-label">Nº *</label>
+				<input asp-for="Cliente.Numero" type="text" class="form-control form-control-sm" />
+			</div>
+			<div class="col-md-5" style="font-size:small">
+				<label asp-for="Cliente.Complemento" class="form-label">Complemento</label>
+				<input asp-for="Cliente.Complemento" type="text" class="form-control form-control-sm" />
+			</div>
+			<div class="col-md-5" style="font-size:small">
+				<label asp-for="Cliente.Bairro" class="form-label">Bairro *</label>
+				<input asp-for="Cliente.Bairro" type="text" class="form-control form-control-sm" id="txtBairro" />
+			</div>
+			<div class="col-md-8" style="font-size:small">
+				<label asp-for="Cliente.Cidade" class="form-label">Cidade *</label>
+				<input asp-for="Cliente.Cidade" type="text" class="form-control form-control-sm" id="txtCidade" />
+			</div>
+			<div class="col-md-2" style="font-size:small">
+				<label asp-for="Cliente.Estado" class="form-label">Estado *</label>
+				<input asp-for="Cliente.Estado" type="text" class="form-control form-control-sm" id="txtEstado" />
+			</div>
+			<div class="col-12">
+				<button type="submit" class="btn btn-primary">Salvar</button>
+			</div>
+		</form>
+	</div>
+</div>
+
