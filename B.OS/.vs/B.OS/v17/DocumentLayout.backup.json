@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Desenvolvimento\\Borges Consultoria\\GIT\\PMOC360\\B.OS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{710F260A-A11D-4861-89B3-EA09E0EAA489}|B.OS.API\\B.OS.API.csproj|d:\\desenvolvimento\\borges consultoria\\git\\pmoc360\\b.os\\b.os.api\\services\\interfaces\\iclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{710F260A-A11D-4861-89B3-EA09E0EAA489}|B.OS.API\\B.OS.API.csproj|solutionrelative:b.os.api\\services\\interfaces\\iclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{710F260A-A11D-4861-89B3-EA09E0EAA489}|B.OS.API\\B.OS.API.csproj|d:\\desenvolvimento\\borges consultoria\\git\\pmoc360\\b.os\\b.os.api\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{710F260A-A11D-4861-89B3-EA09E0EAA489}|B.OS.API\\B.OS.API.csproj|solutionrelative:b.os.api\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{710F260A-A11D-4861-89B3-EA09E0EAA489}|B.OS.API\\B.OS.API.csproj|d:\\desenvolvimento\\borges consultoria\\git\\pmoc360\\b.os\\b.os.api\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{710F260A-A11D-4861-89B3-EA09E0EAA489}|B.OS.API\\B.OS.API.csproj|solutionrelative:b.os.api\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "D:\\Desenvolvimento\\Borges Consultoria\\GIT\\PMOC360\\B.OS\\B.OS.API\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "B.OS.API\\Models\\Cliente.cs",
+              "ToolTip": "D:\\Desenvolvimento\\Borges Consultoria\\GIT\\PMOC360\\B.OS\\B.OS.API\\Models\\Cliente.cs",
+              "RelativeToolTip": "B.OS.API\\Models\\Cliente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-08T23:44:26.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IClientes.cs",
+              "DocumentMoniker": "D:\\Desenvolvimento\\Borges Consultoria\\GIT\\PMOC360\\B.OS\\B.OS.API\\Services\\Interfaces\\IClientes.cs",
+              "RelativeDocumentMoniker": "B.OS.API\\Services\\Interfaces\\IClientes.cs",
+              "ToolTip": "D:\\Desenvolvimento\\Borges Consultoria\\GIT\\PMOC360\\B.OS\\B.OS.API\\Services\\Interfaces\\IClientes.cs",
+              "RelativeToolTip": "B.OS.API\\Services\\Interfaces\\IClientes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-08T23:44:04.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClientesController.cs",
+              "DocumentMoniker": "D:\\Desenvolvimento\\Borges Consultoria\\GIT\\PMOC360\\B.OS\\B.OS.API\\Controllers\\ClientesController.cs",
+              "RelativeDocumentMoniker": "B.OS.API\\Controllers\\ClientesController.cs",
+              "ToolTip": "D:\\Desenvolvimento\\Borges Consultoria\\GIT\\PMOC360\\B.OS\\B.OS.API\\Controllers\\ClientesController.cs",
+              "RelativeToolTip": "B.OS.API\\Controllers\\ClientesController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowC4AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-08T23:25:41.339Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -7,13 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PMOC360.API\PMOC360.API.csproj" />
+    <ProjectReference Include="..\PMOC360.COMMON\PMOC360.COMMON.csproj" />
     <ProjectReference Include="..\PMOC360.Data\PMOC360.Data.csproj" />
-    <ProjectReference Include="..\PMOC360.Repository\PMOC360.Repository.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="InterfaceAPI\" />
   </ItemGroup>
 
 </Project>

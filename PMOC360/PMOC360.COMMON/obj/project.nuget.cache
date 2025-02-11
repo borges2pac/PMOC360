@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "k2+xqhV5YFI=",
+  "success": true,
+  "projectFilePath": "D:\\Desenvolvimento\\Borges Consultoria\\GIT\\PMOC360\\PMOC360\\PMOC360.COMMON\\PMOC360.COMMON.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Alan\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Alan\\.nuget\\packages\\system.configuration.configurationmanager\\9.0.2\\system.configuration.configurationmanager.9.0.2.nupkg.sha512",
+    "C:\\Users\\Alan\\.nuget\\packages\\system.diagnostics.eventlog\\9.0.2\\system.diagnostics.eventlog.9.0.2.nupkg.sha512",
+    "C:\\Users\\Alan\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.2\\system.security.cryptography.protecteddata.9.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

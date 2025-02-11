@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using PMOC360.API;
+using PMOC360.Web.Controllers;
 using PMOC360.Web.ViewModels;
 
 namespace PMOC360.Web.Pages.Cliente

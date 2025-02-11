@@ -1,0 +1,6 @@
+@PMOC360.API_HostAddress = http://localhost:5126
+
+GET {{PMOC360.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

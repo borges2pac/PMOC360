@@ -23,6 +23,13 @@ namespace PMOC360.Data
 			var connectionString = Configuration.GetConnectionString(acesso);
 
 			return connectionString;
-		}			
+		}
+		
+		public static string getUrlApiPmoc(string url)
+		{
+			var urlApi = Configuration.GetConnectionString(url);
+
+			return urlApi;
+		}
 	}
 }
