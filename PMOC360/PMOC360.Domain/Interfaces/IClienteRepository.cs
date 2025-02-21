@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMOC360.Domain.Interfaces
 {
-	public interface IClienteRepository:IRepository<ClienteModel>
+	public interface IClienteRepository : IRepository<ClienteModel>
 	{
 	}
 }

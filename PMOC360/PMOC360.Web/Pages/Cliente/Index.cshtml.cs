@@ -1,17 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PMOC360.Web.Controllers;
+using PMOC360.Web.Services;
 using PMOC360.Web.ViewModels;
 
 namespace PMOC360.Web.Pages.Cliente
 {
     public class IndexModel : PageModel
     {
-		private readonly ClientesController _clientesController;
+		private readonly ClienteService _clienteService;
 
-		public IndexModel(ClientesController clientesController)
+		public IndexModel(ClienteService clienteService)
 		{
-			_clientesController = clientesController;
+			_clienteService = clienteService;
 		}
 
 		[BindProperty]
@@ -21,7 +22,7 @@ namespace PMOC360.Web.Pages.Cliente
 
 		public void OnGet()
 		{
-			var clientes = _clientesController.ObterClientes();
+			var clientes = _clienteService.GetClientes();
 
 			Clientes = clientes;
 		}

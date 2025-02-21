@@ -1,9 +1,7 @@
 using PMOC360.Data;
 using PMOC360.Domain.Interfaces;
-using PMOC360.Repository;
-using PMOC360.Service.Interfaces;
-using PMOC360.Service.Services;
 using PMOC360.Web.Controllers;
+using PMOC360.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,11 +10,9 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddTransient<ClientesController>();
 
+builder.Services.AddTransient<ClienteService>();
+
 builder.Services.AddScoped<ISqlExecutor, SqlExecutor>();
-
-builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
-
-builder.Services.AddScoped<IClienteService, ClienteService>();
 
 var app = builder.Build();
 

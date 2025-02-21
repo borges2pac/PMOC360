@@ -13,5 +13,6 @@ namespace PMOC360.API.Service.Interfaces
 		string Excluir(int id, string user);
 		T GetForId(int id);
 		IEnumerable<T> GetAll();
+		IEnumerable<T> GetAllForId(int id);
 	}
 }

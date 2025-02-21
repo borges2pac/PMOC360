@@ -23,5 +23,24 @@ namespace PMOC360.Data
 		//Equipamentos
 		DataTable GetEquipamentos(int clienteId);
 		bool CadastrarEquipamentos(EquipamentoModel model);
+
+		//Tecnicos
+		bool CadastrarTecnico(TecnicoModel model);
+		DataTable GetTecnicos();
+
+		//Pmoc Modelo
+		int CadastrarModelo(PmocModeloModel model);
+		bool CadastrarItensModelo(ModeloItensModel model);
+		DataTable ImportarListaPmocModelo(int id);
+		DataTable ImportarPmocModelo(int id);
+		DataTable ImportarListaPmocPorModelo(int id);
+		DataTable ImportarListaPmocPorId(int id);		
+
+		//Pmoc Plano
+		bool CadastrarPlano(PmocPlanoModel model);
+		DataTable ImportarListaPmocPlano(int id);
+		DataTable ImportarPmocPlano(int id);
+
+		//Pmoc Controle
 	}
 }

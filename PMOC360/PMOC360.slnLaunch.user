@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "PMOC360.Web\\PMOC360.Web.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "PMOC360.API\\PMOC360.API.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

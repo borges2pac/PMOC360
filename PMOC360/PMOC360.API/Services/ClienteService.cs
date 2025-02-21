@@ -30,39 +30,9 @@ namespace PMOC360.API.Service
 
 		public IEnumerable<ClienteModel> GetAll()
 		{
-			//List<ClienteModel> dto = new List<ClienteModel>();
-
 			try
 			{
 				var list = _repository.GetAll();
-
-				//foreach (var item in list)
-				//{
-				//	var cliente = new ClienteModel()
-				//	{
-				//		ID = item.ID,
-				//		Nome = item.Nome,
-				//		Documento = item.Documento,
-				//		Email = item.Email,
-				//		Telefone = item.Telefone,
-				//		Responsavel = item.Responsavel,
-				//		Endereco = item.Endereco,
-				//		Numero = item.Numero,
-				//		Complemento = item.Complemento,
-				//		Bairro = item.Bairro,
-				//		Cidade = item.Cidade,
-				//		Estado = item.Estado,
-				//		Cep = item.Cep,
-				//		Ativo = item.Ativo,
-				//		EmpresaId = item.EmpresaId,
-				//		UserAlt = item.UserAlt,
-				//		UserCad = item.UserCad,
-				//		DataAlt = item.DataAlt,
-				//		DataCad = item.DataCad
-				//	};
-
-				//	dto.Add(cliente);
-				//}
 
 				return list;
 			}
@@ -72,9 +42,23 @@ namespace PMOC360.API.Service
 			}
 		}
 
-		public ClienteModel GetForId(int id)
+		public IEnumerable<ClienteModel> GetAllForId(int id)
 		{
 			throw new NotImplementedException();
+		}
+
+		public ClienteModel GetForId(int id)
+		{
+			try
+			{
+				var cliente = _repository.GetForId(id);
+
+				return cliente;
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
 		}
 
 		public string Incluir(ClienteModel model)

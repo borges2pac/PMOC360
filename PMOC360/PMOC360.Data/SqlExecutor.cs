@@ -118,6 +118,151 @@ namespace PMOC360.Data
 			return output;
 		}
 
+		public bool CadastrarItensModelo(ModeloItensModel model)
+		{
+			bool output = false;
+
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(_connectionString))
+				{
+					conn.Open();
+
+					using (SqlCommand command = new SqlCommand("spr_CADASTRAR_PMOC_MODELO_ITEM", conn))
+					{
+						command.CommandType = CommandType.StoredProcedure;
+						command.Parameters.Add(new SqlParameter("@modeloId", model.ModeloID));
+						command.Parameters.Add(new SqlParameter("@descricao", model.Descricao));
+						command.Parameters.Add(new SqlParameter("@frequencia", model.Frequencia));
+						command.Parameters.Add(new SqlParameter("@observacao", model.Observacao));
+						command.Parameters.Add(new SqlParameter("@empresa", model.EmpresaId));
+						command.Parameters.Add(new SqlParameter("@user", model.UserCad));
+
+						command.ExecuteNonQuery();
+					}
+				}
+
+				output = true;
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+
+			return output;
+		}
+
+		public int CadastrarModelo(PmocModeloModel model)
+		{
+			int output = 0;
+
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(_connectionString))
+				{
+					conn.Open();
+
+					using (SqlCommand command = new SqlCommand("spr_CADASTRAR_PMOC_MODELO", conn))
+					{
+						command.CommandType = CommandType.StoredProcedure;
+						command.Parameters.Add(new SqlParameter("@nome", model.Nome));
+						command.Parameters.Add(new SqlParameter("@empresa", model.EmpresaId));
+						command.Parameters.Add(new SqlParameter("@user", model.UserCad));
+
+						using (SqlDataReader reader = command.ExecuteReader())
+						{
+							if (reader.Read())
+							{
+								if (!reader.IsDBNull(0))
+								{
+									output = reader.GetInt32(0);
+								}
+							}
+						}
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+
+			return output;
+		}
+
+		public bool CadastrarPlano(PmocPlanoModel model)
+		{
+			bool output = false;
+
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(_connectionString))
+				{
+					conn.Open();
+
+					using (SqlCommand command = new SqlCommand("spr_CADASTRAR_PMOC_PLANO", conn))
+					{
+						command.CommandType = CommandType.StoredProcedure;
+						command.Parameters.Add(new SqlParameter("@nome", model.Nome));
+						command.Parameters.Add(new SqlParameter("@cliente", model.ClienteID));
+						command.Parameters.Add(new SqlParameter("@tecnico1", model.Tecnico1ID));
+						command.Parameters.Add(new SqlParameter("@tecnico2", model.Tecnico2ID));
+						command.Parameters.Add(new SqlParameter("@tecnico3", model.Tecnico3ID));
+						command.Parameters.Add(new SqlParameter("@engenheiro", model.Engenheiro));
+						command.Parameters.Add(new SqlParameter("@registro", model.Registro));
+						command.Parameters.Add(new SqlParameter("@periodoIni", model.PeriodoInicial));
+						command.Parameters.Add(new SqlParameter("@periodoFim", model.PeriodoFinal));
+						command.Parameters.Add(new SqlParameter("@empresa", model.EmpresaId));
+						command.Parameters.Add(new SqlParameter("@user", model.UserCad));
+
+						command.ExecuteNonQuery();
+					}
+				}
+
+				output = true;
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+
+			return output;
+		}
+
+		public bool CadastrarTecnico(TecnicoModel model)
+		{
+			bool output = false;
+
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(_connectionString))
+				{
+					conn.Open();
+
+					using (SqlCommand command = new SqlCommand("spr_CADASTRAR_TECNICO", conn))
+					{
+						command.CommandType = CommandType.StoredProcedure;
+						command.Parameters.Add(new SqlParameter("@nome", model.Nome));
+						command.Parameters.Add(new SqlParameter("@email", model.Email));
+						command.Parameters.Add(new SqlParameter("@cpf", model.Documento));
+						command.Parameters.Add(new SqlParameter("@telefone", model.Telefone));
+						command.Parameters.Add(new SqlParameter("@empresa", model.EmpresaId));
+						command.Parameters.Add(new SqlParameter("@user", model.UserCad));
+
+						command.ExecuteNonQuery();
+					}
+				}
+
+				output = true;
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+
+			return output;
+		}
+
 		public string DesativaCliente(int id, string user)
 		{
 			string output = string.Empty;
@@ -247,6 +392,36 @@ namespace PMOC360.Data
 			return output;
 		}
 
+		public DataTable GetTecnicos()
+		{
+			DataTable output = new DataTable();
+
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(_connectionString))
+				{
+					conn.Open();
+
+					using (SqlCommand command = new SqlCommand("spr_GET_TECNICOS_LIST", conn))
+					{
+						command.CommandType = CommandType.StoredProcedure;
+
+						using (SqlDataReader reader = command.ExecuteReader())
+						{
+							output.Load(reader);
+						}
+					}
+				}
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+
+			return output;
+		}
+
 		public async Task<DataTable> GetUserProfile(string login)
 		{
 			DataTable dt = new DataTable();
@@ -261,6 +436,188 @@ namespace PMOC360.Data
 
 					using (SqlCommand command = new SqlCommand(query, connection))
 					{
+						using (SqlDataReader reader = command.ExecuteReader())
+						{
+							dt.Load(reader);
+						}
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+
+			return dt;
+		}
+
+		public DataTable ImportarListaPmocModelo(int id)
+		{
+			DataTable dt = new DataTable();
+
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(_connectionString))
+				{
+					conn.Open();
+
+					using (SqlCommand command = new SqlCommand("spr_GET_MODELO_LIST", conn))
+					{
+						command.CommandType = CommandType.StoredProcedure;
+						command.Parameters.Add(new SqlParameter("@id", id));
+
+						using (SqlDataReader reader = command.ExecuteReader())
+						{
+							dt.Load(reader);
+						}
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+
+			return dt;
+		}
+
+		public DataTable ImportarPmocModelo(int id)
+		{
+			DataTable dt = new DataTable();
+
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(_connectionString))
+				{
+					conn.Open();
+
+					using (SqlCommand command = new SqlCommand("spr_GET_MODELO", conn))
+					{
+						command.CommandType = CommandType.StoredProcedure;
+						command.Parameters.Add(new SqlParameter("@id", id));
+
+						using (SqlDataReader reader = command.ExecuteReader())
+						{
+							dt.Load(reader);
+						}
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+
+			return dt;
+		}
+
+		public DataTable ImportarListaPmocPlano(int id)
+		{
+			DataTable output = new DataTable();
+
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(_connectionString))
+				{
+					conn.Open();
+
+					using (SqlCommand command = new SqlCommand("spr_GET_PMOC_PLANO", conn))
+					{
+						command.CommandType = CommandType.StoredProcedure;
+						command.Parameters.Add(new SqlParameter("@empresa", id));
+
+						using (SqlDataReader reader = command.ExecuteReader())
+						{
+							output.Load(reader);
+						}
+					}
+				}
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+
+			return output;
+		}
+
+		public DataTable ImportarPmocPlano(int id)
+		{
+			DataTable output = new DataTable();
+
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(_connectionString))
+				{
+					conn.Open();
+
+					using (SqlCommand command = new SqlCommand("spr_GET_PMOC_PLANO_ID", conn))
+					{
+						command.CommandType = CommandType.StoredProcedure;
+						command.Parameters.Add(new SqlParameter("@id", id));
+
+						using (SqlDataReader reader = command.ExecuteReader())
+						{
+							output.Load(reader);
+						}
+					}
+				}
+
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+
+			return output;
+		}
+
+		public DataTable ImportarListaPmocPorModelo(int id)
+		{
+			DataTable dt = new DataTable();
+
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(_connectionString))
+				{
+					conn.Open();
+
+					using (SqlCommand command = new SqlCommand("spr_GET_ITENS_POR_MODELO", conn))
+					{
+						command.CommandType = CommandType.StoredProcedure;
+						command.Parameters.Add(new SqlParameter("@id", id));
+
+						using (SqlDataReader reader = command.ExecuteReader())
+						{
+							dt.Load(reader);
+						}
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+
+			return dt;
+		}
+
+		public DataTable ImportarListaPmocPorId(int id)
+		{
+			DataTable dt = new DataTable();
+
+			try
+			{
+				using (SqlConnection conn = new SqlConnection(_connectionString))
+				{
+					conn.Open();
+
+					using (SqlCommand command = new SqlCommand("spr_GET_ITENS_POR_ID", conn))
+					{
+						command.CommandType = CommandType.StoredProcedure;
+						command.Parameters.Add(new SqlParameter("@id", id));
+
 						using (SqlDataReader reader = command.ExecuteReader())
 						{
 							dt.Load(reader);

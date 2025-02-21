@@ -17,7 +17,7 @@ namespace B.OS.API.Controllers
 			_service = service;
 		}
 
-		[HttpGet]
+		[HttpGet("GetAllClientes")]
 		public IActionResult GetClientes()
 		{
 			try
@@ -32,7 +32,7 @@ namespace B.OS.API.Controllers
 			}
 		}
 
-		[HttpGet("{id}")]
+		[HttpGet("GetCliente")]
 		public IActionResult GetCliente(int id)
 		{
 			var cliente = _service.GetCliente(id);
@@ -40,7 +40,7 @@ namespace B.OS.API.Controllers
 			if (cliente == null)
 				return NotFound();
 
-			return cliente;
+			return Ok();
 		}
 
 		[HttpPost]

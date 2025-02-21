@@ -1,0 +1,13 @@
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.COMMON\bin\Debug\net8.0\PMOC360.COMMON.deps.json
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.COMMON\bin\Debug\net8.0\PMOC360.COMMON.dll
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.COMMON\bin\Debug\net8.0\PMOC360.COMMON.pdb
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.COMMON\obj\Debug\net8.0\PMOC360.COMMON.csproj.AssemblyReference.cache
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.COMMON\obj\Debug\net8.0\PMOC360.COMMON.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.COMMON\obj\Debug\net8.0\PMOC360.COMMON.AssemblyInfoInputs.cache
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.COMMON\obj\Debug\net8.0\PMOC360.COMMON.AssemblyInfo.cs
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.COMMON\obj\Debug\net8.0\PMOC360.COMMON.csproj.CoreCompileInputs.cache
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.COMMON\obj\Debug\net8.0\PMOC360.COMMON.sourcelink.json
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.COMMON\obj\Debug\net8.0\PMOC360.COMMON.dll
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.COMMON\obj\Debug\net8.0\refint\PMOC360.COMMON.dll
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.COMMON\obj\Debug\net8.0\PMOC360.COMMON.pdb
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.COMMON\obj\Debug\net8.0\ref\PMOC360.COMMON.dll
