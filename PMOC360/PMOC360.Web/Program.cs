@@ -1,18 +1,30 @@
-using PMOC360.Data;
-using PMOC360.Domain.Interfaces;
-using PMOC360.Web.Controllers;
-using PMOC360.Web.Services;
+using PMOC360.Web.Models.Data;
+using PMOC360.Web.Models.Repository;
+using PMOC360.Web.Models.Repository.Interfaces;
+using PMOC360.Web.Models.Services;
+using PMOC360.Web.Models.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddTransient<ClientesController>();
+builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+builder.Services.AddScoped<IEquipamentoRepository, EquipamentoRepository>();
+builder.Services.AddScoped<ITecnicoRepository, TecnicoRepository>();
+builder.Services.AddScoped<IPmocModeloRepository, PmocModeloRepository>();
+builder.Services.AddScoped<IPmocModeloItensRepository, PmocModeloItensRepository>();
+builder.Services.AddScoped<IPmocPlanoRepository, PmocPlanoRepository>();
 
-builder.Services.AddTransient<ClienteService>();
+builder.Services.AddScoped<IClienteService, ClienteService>();
+builder.Services.AddScoped<IEquipamentoService, EquipamentoService>();
+builder.Services.AddScoped<ITecnicoService, TecnicoService>();
+builder.Services.AddScoped<IPmocModeloService, PmocModeloService>();
+builder.Services.AddScoped<IPmocModeloItensService, PmocModeloItensService>();
+builder.Services.AddScoped<IPmocPlanoService, PmocPlanoService>();
+builder.Services.AddScoped<IPmocOperacaoService, PmocOperacaoService>();
 
-builder.Services.AddScoped<ISqlExecutor, SqlExecutor>();
+builder.Services.AddScoped<IDapperRepository, DapperRepository>();
 
 var app = builder.Build();
 

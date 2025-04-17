@@ -1,0 +1,17 @@
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.DESKTOP\bin\Debug\net8.0-windows\PMOC360.DESKTOP.exe
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.DESKTOP\bin\Debug\net8.0-windows\PMOC360.DESKTOP.deps.json
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.DESKTOP\bin\Debug\net8.0-windows\PMOC360.DESKTOP.runtimeconfig.json
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.DESKTOP\bin\Debug\net8.0-windows\PMOC360.DESKTOP.dll
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.DESKTOP\bin\Debug\net8.0-windows\PMOC360.DESKTOP.pdb
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.DESKTOP\obj\Debug\net8.0-windows\PMOC360.DESKTOP.Form1.resources
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.DESKTOP\obj\Debug\net8.0-windows\PMOC360.DESKTOP.csproj.GenerateResource.cache
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.DESKTOP\obj\Debug\net8.0-windows\PMOC360.DESKTOP.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.DESKTOP\obj\Debug\net8.0-windows\PMOC360.DESKTOP.AssemblyInfoInputs.cache
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.DESKTOP\obj\Debug\net8.0-windows\PMOC360.DESKTOP.AssemblyInfo.cs
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.DESKTOP\obj\Debug\net8.0-windows\PMOC360.DESKTOP.csproj.CoreCompileInputs.cache
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.DESKTOP\obj\Debug\net8.0-windows\PMOC360.DESKTOP.sourcelink.json
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.DESKTOP\obj\Debug\net8.0-windows\PMOC360.DESKTOP.dll
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.DESKTOP\obj\Debug\net8.0-windows\refint\PMOC360.DESKTOP.dll
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.DESKTOP\obj\Debug\net8.0-windows\PMOC360.DESKTOP.pdb
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.DESKTOP\obj\Debug\net8.0-windows\PMOC360.DESKTOP.genruntimeconfig.cache
+D:\Desenvolvimento\Borges Consultoria\GIT\PMOC360\PMOC360\PMOC360.DESKTOP\obj\Debug\net8.0-windows\ref\PMOC360.DESKTOP.dll

@@ -1,0 +1,65 @@
+﻿@page "{id:int}"
+@model PMOC360.Web.Pages.Equipamento.IndexModel
+@{
+	ViewData["Title"] = "Equipamentos";
+}
+<div class="row">	
+	<div class="container">
+		@if (Model.Cliente != null)
+		{
+			<h3 style="font-size:small">
+				Equipamentos do Cliente: @Model.Cliente
+			</h3>
+		}
+	</div>
+	<div style="padding-top:20px;">
+		<a asp-page="./Novo" asp-route-id="@Model.CodCliente" type="button" class="btn btn-primary" style="font-size:small">Novo Equipamento</a>
+		<div class="row mb-3" style="padding: 6px 10px; float: right; text-align: right;">
+			<div class="col-auto">
+				<label class="col-form-label">Pesquisar</label>
+			</div>
+			<div class="col-auto">
+				<input class="form-control form-control-sm" type="search" width="150" />
+			</div>
+		</div>
+		<table id="table" class="table" width="100%" style="font-size:small;">
+			<thead>
+				<tr>
+					<th scope="col">Cod</th>
+					<th scope="col">Equipamento</th>
+					<th scope="col">Potência</th>
+					<th scope="col">Ambiente</th>
+					<th scope="col">Bar Code</th>
+					<th scope="col"></th>
+				</tr>
+			</thead>
+			<tbody class="table-group-divider">
+				@foreach (var item in Model.Equipamentos)
+				{
+					<tr>
+						<td>
+							@Html.DisplayFor(modelItem => item.ID)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.Equipamento)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.Potencia)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.Ambiente)
+						</td>
+						<td>
+							@Html.DisplayFor(modelItem => item.barCode)
+						</td>
+						<td>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
+

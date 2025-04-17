@@ -1,0 +1,222 @@
+﻿@model X.PagedList.IPagedList<B.OS.WEB.Models.TabCliente>
+
+@{
+	ViewData["Title"] = "Clientes";
+}
+
+<div class="row">
+	<div class="alert aler-@(ViewBag.AlertaTela == 0 ? "danger" : "success") alert-dismissible fade show" role="alert" id="successAlert" style="display: @(ViewBag.AlertaTela == 1 ? "block" : "none");">
+		<div id="alertaRetorno">@ViewBag.MensagemRetorno</div>
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+	</div>
+
+	<div class="text-end p-3">
+		<button type="button" class="btn btn-primary" onclick="javascript:Editar(0,0);" data-bs-toggle="modal" data-bs-target="#FormModal" data-bs-whatever="@Html.Raw("mdo")">+Novo</button>
+	</div>
+
+	<nav class="navabar bg-body-tertiary">
+		<div class="container-fluid">
+			<a class="nvbar-brand"><b>Clientes</b></a>
+			<form class="d-flex col-md-4" role="search" id="FormSearch">
+				<input class="form-control me-2" id="Search" value="@ViewBag.search" type="search" placeholder="Search" aria-label="Search" />
+				<button class="btn btn-outline-success" onclick="javascript:Filtrar(documento.getElementById('Search').value);" type="button">Search</button>
+			</form>
+		</div>
+	</nav>
+
+	<div class="modal fade" id="FormModal" tabindex="-1" aria-labelledby="FormModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-xl" style="width: 800px;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div id="divModal"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="msgModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<h1 style="text-align: center" class="modal-title fs-5" id="exampleModalLabel">Tem certeza que deseja exluir?</h1>
+				</div>
+				<div>
+					<button type="button" class="btn btn-secundary" data-bs-dismiss="modal">Close</button>
+					<button type="button" id="btnRemover" data-id="0" class="btn btn-primary">Excluir</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<table id="Lista" class="table table-striped" style="font-size:small">
+		<thead>
+			<tr>
+				<th scope="col">Cod.</th>
+				<th scope="col">Tipo</th>
+				<th scope="col">Nome</th>
+				<th scope="col">Contato</th>
+				<th scope="col">WhatsApp</th>
+				<th scope="col">Cliente Desde</th>
+				<th scope="col"></th>
+			</tr>
+		</thead>
+		<tbody>
+			@if(Model != null)
+			{
+				@foreach(var item in Model)
+				{
+					<tr>
+						<td>@item.Codigo</td>
+						<td>@item.Tipo</td>
+						<td>@item.Nome</td>
+						<td>@item.Contato</td>
+						<td>@item.WhatsApp</td>
+						<td>@item.DataCadastro.ToString("dd/MM/yyyy")</td>
+						<td>
+							<div class="row">
+								<div class="col">
+									<button onclick="javascript:Editar(1, @item.Codigo);" data-id="@item.Codigo" data-bs-toggle="modal" data-bs-target="#FormModal" data-bs-whatever="@Html.Raw("mdo")" style="border:none; background-color:transparent">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16" style="color:black; margin:5px">
+											<path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325" />
+										</svg>
+									</button>
+								</div>
+								<div class="col">
+									<button onclick="javascript:Remove(@item.Codigo);" data-id="@item.Codigo" data-bs-toggle="modal" data-bs-target="#msgModal" style="border:none; background-color:transparent">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser" viewBox="0 0 16 16" style="color:black; margin:5px">
+											<path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293z" />
+										</svg>
+									</button>
+								</div>
+							</div>
+						</td>
+					</tr>
+				}
+			}
+		</tbody>
+	</table>
+	@{
+		int currentPage = Model.PageNumber;
+		int totalPages = Model.PageCount;
+		int displayRange = 5;
+		int groupStart = ((currentPage - 1) / displayRange) * displayRange + 1;
+		int groupEnd = Math.Min(groupStart + displayRange -1, totalPages);
+		var prevGroup = Math.Max(groupStart - displayRange, 1);
+		var nextGroup = groupEnd + 1;
+
+		var prevDisabled = currentPage <= 1 ? "disabled" : "";
+		var nextDisabled = currentPage >= totalPages ? "disabled" : "";
+	}
+
+	<nav aria-label="Page navigation example">
+		<ul class="pagination justify-content-end">
+			<li class="page-item @prevDisabled">
+				<a class="page-link" asp-action="Index" asp-route-page="@prevGroup">Previous</a>
+			</li>
+
+			@for(var i = groupStart; i <= groupEnd; i++)
+			{
+				<li class="page-item @(i == currentPage ? "active" : "")">
+					<a class="page-link" asp-action="Index" asp-route-page="@i">@i</a>
+				</li>
+			}
+
+			<li class="page-item @nextDisabled">
+				<a class="page-link" asp-action="Index" asp-route-page="@nextGroup">Next</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+<script>
+	const successAlert = document.getElementById('successAlert');
+	FecharAlertTimer();
+
+	function FecharAlertTimer(){
+		setTimeout(function (){
+			successAlert.style.display = 'none';
+		}, 3000);
+	}
+
+	function Editar(incluirAlterar, id){
+		debugger;
+		$.ajax({
+			url: '@Url.Action("Form", "Cliente")',
+			type: 'GET',
+			data: { incluirAlterar: incluirAlterar, id: id },
+			success: function(data){
+				$('#divModal').html(data);
+				CarregarValidacaoCamposForm(id);
+			},
+			error: function(){
+				//se for necessário, lidar com erros
+			}
+		});
+	}
+
+	function Filtrar(search){
+		window.location = window.location.origin + window.location.pathname + "?search" + search;
+	}
+
+	function Remove(id){
+		$.ajax({
+			url: '@Url.Action("Remove", "Cliente")',
+			type: 'GET',
+			data: {id: id},
+			success: function(data){
+				window.location = window.location;
+			},
+			error: function(){
+				//se for necessário, lidar com erros
+			}
+		});
+	}
+
+	function CarregarValidacaoCamposForm(id){
+
+		const form = document.getElementById('myForm');
+
+		form.addEventListener('submit', function (event) {
+
+			if (form.checkValidity()) {
+				SalvarFormulario();
+			}
+
+			event.preventDefault(); //Evita o envio padrão do formulário se ele não for válido
+			form.classList.add('was-validated'); //Adicione a classe para exibir mensagens de validação
+		});
+	}
+
+	function SalvarFormulario(){
+		debugger;
+		var objeto = GetValoresCamposTela();
+		const successAlertForm = document.getElementById('successAlertForm');
+
+		$.ajax({
+			url: '@Url.Action("Save", "Cliente")',
+			type: 'POST',
+			data: objeto,
+			success: function(data){
+				$("#alertaRetornoForm").html(data.descricao);
+
+				successAlertForm.style.display = 'block';
+				successAlertForm.classList.remove("alert-danger");
+				successAlertForm.classList.add("alert-success");
+
+				setTimeout(function(){
+					window.location = window.location;
+				}, 2000);
+			},
+			error: function(error){
+				$("#alertaRetornoForm").html(error.responseJSON.descricao);
+
+				successAlertForm.style.display = 'block';
+				successAlertForm.classList.remove("alert-success");
+				successAlertForm.classList.add("alert-danger");
+			}
+		});
+	}
+</script>

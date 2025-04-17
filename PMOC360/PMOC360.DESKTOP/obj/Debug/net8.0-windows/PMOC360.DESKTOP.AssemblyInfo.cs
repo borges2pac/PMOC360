@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PMOC360.DESKTOP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3169ce1945b44167a7b8da895c9234c0c54ca08e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f36da64761cbe488b96359354b9526fb7482e288")]
 [assembly: System.Reflection.AssemblyProductAttribute("PMOC360.DESKTOP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PMOC360.DESKTOP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

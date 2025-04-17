@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "TXD8aT5uEUdkOBYRo56nSoRZTspEpr8JkiEss0yGflo=",
+  "Source": "B.OS.API",
+  "BasePath": "_content/B.OS.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

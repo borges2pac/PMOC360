@@ -1,16 +1,16 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using PMOC360.Web.Controllers;
-using PMOC360.Web.Services;
-using PMOC360.Web.ViewModels;
+using PMOC360.Web.Models.Services;
+using PMOC360.Web.Models.ViewModels;
+using System.Linq;
 
 namespace PMOC360.Web.Pages.Cliente
 {
-    public class IndexModel : PageModel
+	public class IndexModel : PageModel
     {
-		private readonly ClienteService _clienteService;
+		private readonly IClienteService _clienteService;
 
-		public IndexModel(ClienteService clienteService)
+		public IndexModel(IClienteService clienteService)
 		{
 			_clienteService = clienteService;
 		}
@@ -18,13 +18,29 @@ namespace PMOC360.Web.Pages.Cliente
 		[BindProperty]
 		public IEnumerable<ClienteViewModel> Clientes { get; private set; }
 
+		public int PaginaAtual { get; set; }
+
+		public int TotalPaginas { get; set; }
+
 		public string AlertMessage { get; private set; }
 
-		public void OnGet()
+		public void OnGet(int pagina = 1)
 		{
-			var clientes = _clienteService.GetClientes();
+			int tamanhoPagina = 5;
+			int totalItens = 0;
 
-			Clientes = clientes;
+			var clientes = _clienteService.GetAll(2);
+
+			totalItens = clientes.Count();
+			TotalPaginas = (int)Math.Ceiling(totalItens / (double)tamanhoPagina);
+			PaginaAtual = pagina;
+
+			Clientes = clientes
+				.Skip((pagina - 1) * tamanhoPagina)
+				.Take(tamanhoPagina)
+				.ToList();
+
+			//Clientes = clientes;
 		}
 
 		//public async Task<IActionResult> OnGetDeleteAsync(int id)

@@ -1,0 +1,116 @@
+﻿@page
+@model PMOC360.Web.Pages.Pmoc.Operacao.InserirModel
+@{
+	ViewData["Title"] = "Gestão da Manutenção";
+}
+<div class="row">
+	<div class="container">
+		<h3>
+			Gestão do PMOC
+		</h3>
+	</div>
+	@if (TempData["AlertMessage"] != null)
+	{
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			@TempData["AlertMessage"]
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	}
+	<div style="padding-top:20px;">
+		<form asp-page-handler="Search" asp-route-barCode="BarCode" method="post">
+			<div class="row g-3" style="font-size:small">
+				<div class="col-auto">
+					<label asp-for="BarCode" class="form-label">Bar Code *</label>
+				</div>
+				<div class="col-auto">
+					<input asp-for="BarCode" type="text" class="form-control form-control-sm">
+				</div>
+				<div class="col-auto">
+					<button title="Localizar" class="btn-primary form-control form-control-sm">Buscar</button>
+				</div>
+			</div>
+		</form>
+		<hr />
+		@if (Model.Operacao != null)
+		{
+			<form asp-page-handler="Save" method="post">
+				<div id="conteudoPartial" class="col-12" style="font-size:small">
+					<div class="col-12 row">
+						<div class="col-md-6">
+							@* 							<label asp-for="@Model.OperacaoCad.Modelo_Id" hidden>@Model.Operacao.Modelo.ID</label>
+							<input type="hidden" asp-for="OperacaoCad.Modelo_Id" />
+ *@							<label asp-for="ModeloId" class="form-label" hidden>@Model.Operacao.Modelo.ID</label>
+							<input asp-for="ModeloId" type="hidden" class="form-control form-control-sm" id="txtModeloId" value="@Model.Operacao.Modelo.ID" />
+							<label class="form-label">PMOC Modelo: @Model.Operacao.Modelo.Nome</label>
+						</div>
+						<div class="col-md-6">
+							<label asp-for="@Model.OperacaoCad.Cliente_Id" hidden>@Model.Operacao.Cliente.ID</label>
+							<label class="form-label">Cliente: @Model.Operacao.Cliente.Nome</label>
+						</div>
+					</div>
+					<hr />
+					<div class="col-12 row">
+						<div class="col-auto">
+							<label asp-for="@Model.OperacaoCad.Equipamento_Id" class="form-label">Código: @Model.Operacao.Equipamento.ID</label>
+						</div>
+						<div class="col-auto">
+							<label class="form-label">Equipamento: @Model.Operacao.Equipamento.Equipamento</label>
+						</div>
+						<div class="col-auto">
+							<label class="form-label">Fabricante: @Model.Operacao.Equipamento.Fabricante</label>
+						</div>
+						<div class="col-auto">
+							<label class="form-label">Modelo: @Model.Operacao.Equipamento.Modelo</label>
+						</div>
+						<div class="col-auto">
+							<label class="form-label">Ambiente: @Model.Operacao.Equipamento.Ambiente</label>
+						</div>
+					</div>
+					<hr />
+					<div class="col-12">
+						<div class="col-md-3">
+							<label asp-for="@Model.OperacaoCad.Dt_Ultima_Visita" class="form-label">Data Manutenção:</label>
+							<input asp-for="@Model.OperacaoCad.Dt_Ultima_Visita" class="form-control form-control-sm" type="date" />
+						</div>
+						<table id="table" class="table" width="100%" style="font-size:small;">
+							<thead>
+								<tr>
+									<th scope="col">Cod</th>
+									<th scope="col">Item Nome</th>
+									<th scope="col"></th>
+								</tr>
+							</thead>
+							<tbody class="table-group-divider">
+								@if (Model.Operacao.Itens != null)
+								{
+									@for (int i = 0; i < Model.Operacao.Itens.Count; i++)
+									{
+										@foreach (var item in Model.Operacao.Itens)
+										{
+											<tr>
+												<td>
+													<label asp-for="OperacaoCad.Itens[i].ID" hidden></label>
+													@Html.DisplayFor(modelItem => item.ID)
+												</td>
+												<td>
+													<label asp-for="OperacaoCad.Itens[i].Descricao" hidden></label>
+													@Html.DisplayFor(modelItem => item.Descricao)
+												</td>
+												<td>
+													<input type="checkbox" asp-for="OperacaoCad.Itens[i].Selecionado" />
+												</td>
+											</tr>
+										}
+									}
+								}
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="col-12">
+					<button type="submit" class="btn btn-primary">Salvar</button>
+				</div>
+			</form>
+		}
+	</div>
+</div>

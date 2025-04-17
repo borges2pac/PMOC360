@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PMOC360.COMMON\PMOC360.COMMON.csproj" />
-    <ProjectReference Include="..\PMOC360.Data\PMOC360.Data.csproj" />
+    <PackageReference Include="Dapper" Version="2.1.66" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.1" />
   </ItemGroup>
 
 </Project>

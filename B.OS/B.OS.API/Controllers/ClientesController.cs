@@ -50,29 +50,29 @@ namespace B.OS.API.Controllers
 			return CreatedAtAction(nameof(GetCliente), new { id = cliente.Id }, cliente);
 		}
 
-		[HttpPut]
-		public IActionResult PutCliente([FromBody] Cliente cliente)
-		{
-			if (id != cliente.Id)
-				return BadRequest();
+		//[HttpPut]
+		//public IActionResult PutCliente([FromBody] Cliente cliente)
+		//{
+		//	if (id != cliente.Id)
+		//		return BadRequest();
 
-			_context.Entry(cliente).State = EntityState.Modified;
-			await _context.SaveChangesAsync();
+		//	_context.Entry(cliente).State = EntityState.Modified;
+		//	await _context.SaveChangesAsync();
 
-			return NoContent();
-		}
+		//	return NoContent();
+		//}
 
-		[HttpDelete("{id}")]
-		public IActionResult DeleteCliente(int id)
-		{
-			var cliente = await _context.Clientes.FindAsync(id);
-			if (cliente == null)
-				return NotFound();
+		//[HttpDelete("{id}")]
+		//public IActionResult DeleteCliente(int id)
+		//{
+		//	var cliente = await _context.Clientes.FindAsync(id);
+		//	if (cliente == null)
+		//		return NotFound();
 
-			_context.Clientes.Remove(cliente);
-			await _context.SaveChangesAsync();
+		//	_context.Clientes.Remove(cliente);
+		//	await _context.SaveChangesAsync();
 
-			return NoContent();
-		}
+		//	return NoContent();
+		//}
 	}
 }

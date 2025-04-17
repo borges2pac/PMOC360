@@ -1,0 +1,85 @@
+﻿@page "{id:int}"
+@model PMOC360.Web.Pages.Equipamento.NovoModel
+@{
+	ViewData["Title"] = "Cadastrar Equipamento";
+}
+<div class="row">
+	<div class="breadcrumb border-bottom border-info-subtle" style="font-size:small">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a asp-page="/Index">Home</a></li>
+			<li class="breadcrumb-item"><a asp-page="./Index">Equipamento</a></li>
+			<li class="breadcrumb-item active" aria-current="page">Novo</li>
+		</ol>
+	</div>
+	<div class="container">
+		@if (Model.Cliente != null)
+		{
+			<h3 style="font-size:small">
+				Cadastrar Equipamento de @Model.Cliente
+			</h3>
+		}
+	</div>
+	@if (Model.Mensagem != null)
+	{
+		<p>@Model.Mensagem</p>
+	}
+	<div style="padding-top:20px;">
+		<form method="post" class="row g-3">
+			<div class="col-md-2" style="font-size:small">
+				<label asp-for="Equipamento.ClienteID" class="form-label">Codigo Cliente *</label>
+				<input asp-for="Equipamento.ClienteID" type="text" class="form-control form-control-sm" value="@Model.CodCliente" readonly />
+			</div>
+			<div class="col-md-5" style="font-size:small">
+				<label asp-for="Equipamento.Equipamento" class="form-label">Equipamento *</label>
+				<input asp-for="Equipamento.Equipamento" type=" text" class="form-control form-control-sm" />
+			</div>
+			<div class="col-md-4" style="font-size:small">
+				<label asp-for="Equipamento.Fabricante" class="form-label">Fabricante *</label>
+				<input asp-for="Equipamento.Fabricante" type=" email" class="form-control form-control-sm" />
+			</div>
+			<div class="col-md-5" style="font-size:small">
+				<label asp-for="Equipamento.Modelo" class="form-label">Modelo *</label>
+				<input asp-for="Equipamento.Modelo" type="tel" class="form-control form-control-sm" />
+			</div>
+			<div class="col-md-3" style="font-size:small">
+				<label asp-for="Equipamento.Potencia" class="form-label">Potência *</label>
+				<input asp-for="Equipamento.Potencia" type="text" class="form-control form-control-sm" />
+			</div>
+			<div class="col-md-3" style="font-size:small">
+				<label asp-for="Equipamento.Serie" class="form-label">Nº Série*</label>
+				<input asp-for="Equipamento.Serie" type="text" class="form-control form-control-sm" />
+			</div>
+			<div class="col-md-3" style="font-size:small">
+				<label asp-for="Equipamento.Tag" class="form-label">Tag *</label>
+				<input asp-for="Equipamento.Tag" type="text" class="form-control form-control-sm" />
+			</div>
+			<div class="col-md-4" style="font-size:small">
+				<label asp-for="Equipamento.TipoAtividade" class="form-label">Tipo de Atividade *</label>
+				<input asp-for="Equipamento.TipoAtividade" type="text" class="form-control form-control-sm" />
+			</div>
+			<div class="col-md-5" style="font-size:small">
+				<label asp-for="Equipamento.Ambiente" class="form-label">Ambiente</label>
+				<input asp-for="Equipamento.Ambiente" type="text" class="form-control form-control-sm" />
+			</div>
+			<div class="col-md-2" style="font-size:small">
+				<label asp-for="Equipamento.Fixos" class="form-label">Pontos Fixos *</label>
+				<input asp-for="Equipamento.Fixos" type="text" class="form-control form-control-sm" />
+			</div>
+			<div class="col-md-2" style="font-size:small">
+				<label asp-for="Equipamento.Flutuantes" class="form-label">Pontos Flutuantes *</label>
+				<input asp-for="Equipamento.Flutuantes" type="text" class="form-control form-control-sm" />
+			</div>
+			<div class="col-md-5" style="font-size:small">
+				<label asp-for="Equipamento.PmocModeloID" class="form-label">PMOC Modelo *</label>
+				<input asp-for="Equipamento.PmocModeloID" type="text" class="form-control form-control-sm" />
+			</div>
+			<div class="col-md-3" style="font-size:small">
+				<label asp-for="Equipamento.barCode" class="form-label">Código da etiqueta *</label>
+				<input asp-for="Equipamento.barCode" type="text" class="form-control form-control-sm" />
+			</div>
+			<div class="col-12">
+				<button type="submit" class="btn btn-primary">Salvar</button>
+			</div>
+		</form>
+	</div>
+</div>

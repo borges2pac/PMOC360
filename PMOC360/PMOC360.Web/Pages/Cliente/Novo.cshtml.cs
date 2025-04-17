@@ -1,17 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using PMOC360.Web.Controllers;
-using PMOC360.Web.ViewModels;
+using PMOC360.Web.Models.Services;
+using PMOC360.Web.Models.ViewModels;
 
 namespace PMOC360.Web.Pages.Cliente
 {
-    public class NovoModel : PageModel
+	public class NovoModel : PageModel
     {
-		private readonly ClientesController _clientesController;
+		private readonly IClienteService _clienteService;
 
-		public NovoModel(ClientesController clientesController)
+		public NovoModel(IClienteService clienteService)
 		{
-			_clientesController = clientesController;
+			_clienteService = clienteService;
 		}
 
 		[BindProperty]

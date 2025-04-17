@@ -1,17 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using PMOC360.Web.Controllers;
-using PMOC360.Web.ViewModels;
+using PMOC360.Web.Models.Services;
+using PMOC360.Web.Models.ViewModels;
 
 namespace PMOC360.Web.Pages.Cliente
 {
-    public class EditarModel : PageModel
+	public class EditarModel : PageModel
     {
-		private readonly ClientesController _clientesController;
+		private readonly IClienteService _clienteService;
 
-		public EditarModel(ClientesController clientesController)
+		public EditarModel(IClienteService clienteService)
 		{
-			_clientesController = clientesController;
+			_clienteService = clienteService;
 		}
 
 		[BindProperty]
@@ -21,35 +21,33 @@ namespace PMOC360.Web.Pages.Cliente
 
 		public async Task<IActionResult> OnGetAsync(int? id)
 		{
-			//var retorno = _cliente.GetListaClietes((int)id);
+			var retorno = _clienteService.GetForId((int)id, 2);
 
-			//if (retorno.Count == 1)
-			//{
-			//	ClienteViewModel model = new ClienteViewModel();
+			if (retorno != null)
+			{
+				ClienteViewModel model = new ClienteViewModel() 
+				{
+					ID = retorno.ID,
+					Nome = retorno.Nome,
+					Documento = retorno.Documento,
+					Email = retorno.Email,
+					Telefone = retorno.Telefone,
+					Responsavel = retorno.Responsavel,
+					Endereco = retorno.Endereco,
+					Numero = retorno.Numero,
+					Complemento = retorno.Complemento,
+					Bairro = retorno.Bairro,
+					Cidade = retorno.Cidade,
+					Estado = retorno.Estado,
+					Cep = retorno.Cep,
+				};
 
-			//	foreach (var item in retorno)
-			//	{
-			//		model.ID = item.ID;
-			//		model.Nome = item.Nome;
-			//		model.Documento = item.Documento;
-			//		model.Email = item.Email;
-			//		model.Telefone = item.Telefone;
-			//		model.Responsavel = item.Responsavel;
-			//		model.Endereco = item.Endereco;
-			//		model.Numero = item.Numero;
-			//		model.Complemento = item.Complemento;
-			//		model.Bairro = item.Bairro;
-			//		model.Cidade = item.Cidade;
-			//		model.Estado = item.Estado;
-			//		model.Cep = item.Cep;
-			//	}
-
-			//	Cliente = model;
-			//}
-			//else
-			//{
-			//	return NotFound();
-			//}
+				Cliente = model;
+			}
+			else
+			{
+				return NotFound();
+			}
 
 			return Page();
 		}
